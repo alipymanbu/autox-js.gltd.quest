@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autox.js：在安卓手机上用 JavaScript 写自动化脚本的工具</title>
+  <meta name="description" content="Autox.js 让手机重复操作交给脚本：无障碍服务驱动、控件与坐标两种定位、找图找色与 OCR、悬浮窗录制、连电脑调试、打包独立应用。这里整理它的能力说明与安装文件资源获取指引。">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/">
+        <img src="/assets/img/favicon.svg" alt="Autox.js 介绍站标识" width="30" height="30">
+        Autox.js<span class="dot">_</span>安卓脚本
+      </a>
+      <button class="nav-toggle" aria-label="展开导航" aria-expanded="false">≡</button>
+      <ul class="nav-links">
+        <li><a href="#features">能力</a></li>
+        <li><a href="#code">脚本示例</a></li>
+        <li><a href="#shots">界面速览</a></li>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a href="/download.html">安装指引</a></li>
+        <li><a class="nav-cta" href="#" data-link="download">获取安装文件资源</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- 首屏 -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="tagline">JavaScript · Android · 无障碍服务</span>
+          <h1>把手机上的重复操作<br>写成 <span class="hl">auto();</span> 一样的脚本</h1>
+          <p class="lead">Autox.js 是运行在安卓设备上的 JavaScript 自动化工具：靠系统无障碍服务读写界面、执行点击与滑动，大部分功能不需要 Root。写几行代码，就能让打开应用、找按钮、点确认这类机械动作自己跑起来。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#" data-link="download">获取安装文件资源</a>
+            <a class="btn btn-ghost" href="/download.html">查看安装步骤</a>
+          </div>
+          <p class="hero-meta"><span>$</span> toast("脚本开始运行"); &nbsp;// 几行代码即可上手</p>
+        </div>
+        <div class="phone">
+          <div class="phone-bar"><i></i><i></i><i></i></div>
+          <img src="/assets/img/shot-docs.jpg" alt="Autox.js 内置文档页，界面标注无需 Root 权限的 JavaScript 自动化软件" width="337" height="600">
+        </div>
+      </div>
+    </section>
+
+    <!-- 能力 -->
+    <section class="section section-alt" id="features">
+      <div class="wrap">
+        <div class="sec-head fade">
+          <span class="sec-kicker">Features</span>
+          <h2>一台手机就是一套自动化开发环境</h2>
+          <p>从写脚本、跑脚本到调脚本，它把整条链路都装进了一个应用里，不依赖电脑也能完成大半工作。</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature fade">
+            <div class="ico">A11y</div>
+            <h3>无障碍驱动，免 Root</h3>
+            <p>通过系统无障碍服务读取屏幕控件、执行点击与滑动，常规自动化场景无需获取最高系统权限。</p>
+          </div>
+          <div class="feature fade">
+            <div class="ico">UI</div>
+            <h3>控件与坐标两种定位</h3>
+            <p>普通界面按文字、ID 精准找到控件再操作，换机型不容易错位；游戏画面等控件缺失的场景再退回坐标点击。</p>
+          </div>
+          <div class="feature fade">
+            <div class="ico">Img</div>
+            <h3>找色、找图与文字识别</h3>
+            <p>截屏之后可以按颜色定位按钮、按模板小图匹配目标，v7 分支还内置了 OCR 模型，屏幕上的文字也能读出来。</p>
+          </div>
+          <div class="feature fade">
+            <div class="ico">Rec</div>
+            <h3>悬浮窗录制动作</h3>
+            <p>打开录制后正常使用手机，点按与滑动会被记录成脚本代码，回放即可复现，是理解自动化写法的直观入口。</p>
+          </div>
+          <div class="feature fade">
+            <div class="ico">VS</div>
+            <h3>连电脑协同开发</h3>
+            <p>支持与桌面端编辑器联动：手机上写代码费劲时，把脚本投到电脑那边改，保存即同步，效率高一截。</p>
+          </div>
+          <div class="feature fade">
+            <div class="ico">Apk</div>
+            <h3>脚本打包成独立应用</h3>
+            <p>写好的脚本可以连同图片资源一起打包成单独的安装包，分给同样需要这套流程的人直接使用。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 脚本示例 -->
+    <section class="section" id="code">
+      <div class="wrap code-cols">
+        <div class="code-side fade">
+          <span class="sec-kicker">Hello Autox</span>
+          <h2>第一个脚本只要五行</h2>
+          <p>内置编辑器带代码补全与格式化，脚本默认存在手机内置存储的「脚本」文件夹，文件管理器里就能直接看到这些 .js 文件。</p>
+          <ul>
+            <li>提示、启动应用、等待、按键，四个最常用的动作各占一行</li>
+            <li>等待尽量写成「等条件成立」而不是写死秒数，网络慢也不点空</li>
+            <li>跑飞了随时按音量上键停止，或点悬浮条上的停止按钮</li>
+          </ul>
+        </div>
+        <div class="code-window fade">
+          <div class="code-titlebar"><i></i><i></i><i></i><span class="fname">main.js</span></div>
+          <pre><span class="tk-c">// 弹出提示气泡</span>
+<span class="tk-f">toast</span>(<span class="tk-s">"脚本开始运行"</span>);
+
+<span class="tk-c">// 打开系统设置</span>
+<span class="tk-f">launchApp</span>(<span class="tk-s">"设置"</span>);
+
+<span class="tk-c">// 等待 2 秒（毫秒）</span>
+<span class="tk-f">sleep</span>(<span class="tk-n">2000</span>);
+
+<span class="tk-c">// 回到桌面</span>
+<span class="tk-f">home</span>();</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 界面速览 -->
+    <section class="section section-alt" id="shots">
+      <div class="wrap">
+        <div class="sec-head fade">
+          <span class="sec-kicker">Screens</span>
+          <h2>界面速览</h2>
+          <p>主界面就是一个文件列表：上层文件夹、下层文件，右上角新建；设置抽屉里集中了服务开关与权限管理。</p>
+        </div>
+        <div class="shot-grid">
+          <figure class="shot fade">
+            <img src="/assets/img/shot-home.jpg" alt="Autox.js 主界面：文件夹与文件列表，右下角为新建按钮" width="337" height="600">
+            <figcaption><b>主界面</b>脚本目录列表，含示例代码文件夹</figcaption>
+          </figure>
+          <figure class="shot fade">
+            <img src="/assets/img/shot-docs.jpg" alt="Autox.js 内置文档页，介绍无需 Root 的 JavaScript 自动化能力" width="337" height="600">
+            <figcaption><b>内置文档</b>随手可查的说明与示例</figcaption>
+          </figure>
+          <figure class="shot fade">
+            <img src="/assets/img/shot-settings.jpg" alt="Autox.js 设置抽屉：启用新编辑器、无障碍服务、稳定模式等开关" width="337" height="600">
+            <figcaption><b>设置抽屉</b>服务开关与权限管理集中一处</figcaption>
+          </figure>
+          <figure class="shot fade">
+            <img src="/assets/img/shot-permission.jpg" alt="Autox.js 首次启动提示需要存储权限才能正常运行的对话框" width="337" height="600">
+            <figcaption><b>首次启动</b>按提示逐项授权即可正常运行</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 权限准备 -->
+    <section class="section" id="perm">
+      <div class="wrap">
+        <div class="sec-head fade" style="text-align:center;">
+          <span class="sec-kicker">Before Run</span>
+          <h2>跑脚本前，先把三项权限开齐</h2>
+          <p>「点了没反应」十有八九出在这里，安装完成后建议一次配好。</p>
+        </div>
+        <div class="perm-note fade">
+          <div class="perm-card">
+            <div class="p-ico">[a11y]</div>
+            <h3>无障碍服务</h3>
+            <p>设置 → 无障碍 → 已下载的应用里打开，脚本读写界面的基础，没开连提示气泡都不弹。</p>
+          </div>
+          <div class="perm-card">
+            <div class="p-ico">[float]</div>
+            <h3>悬浮窗</h3>
+            <p>没有它就没有脚本控制条，运行、停止、录制这些顺手按钮都用不了。</p>
+          </div>
+          <div class="perm-card">
+            <div class="p-ico">[batt]</div>
+            <h3>电池白名单</h3>
+            <p>切后台或锁屏后脚本容易被系统杀掉，把应用设为不受电池优化限制更稳。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="section section-alt" id="faq">
+      <div class="wrap">
+        <div class="sec-head fade" style="text-align:center;">
+          <span class="sec-kicker">FAQ</span>
+          <h2>常见问题</h2>
+        </div>
+        <div class="faq fade">
+          <details>
+            <summary>需要把手机 Root 之后才能用吗？</summary>
+            <p>常规的界面自动化走系统无障碍服务，不需要 Root。只有少数涉及更高系统权限的操作才有额外要求，日常写脚本可以完全不管。</p>
+          </details>
+          <details>
+            <summary>它和老的 Auto.js 是什么关系？</summary>
+            <p>Auto.js 原项目多年前已停止维护，社区在其基础上继续维护并发展出现在的 Autox.js，分成 6.x 与 7.x 两条分支：6.x 资料与教程最多，7.x 换了新界面并引入 Node.js 引擎、支持 TypeScript。两个分支的包名不同，可以同时装在一部手机上。</p>
+          </details>
+          <details>
+            <summary>完全没写过代码，能上手吗？</summary>
+            <p>可以先从悬浮窗的「录制」功能开始：正常操作手机，动作会被记成脚本，回放即可复现。看懂录出来的代码再照着改，是最平滑的入门路径；内置文档与应用商店里的示例代码也能直接跑。</p>
+          </details>
+          <details>
+            <summary>什么系统版本能装？</summary>
+            <p>近几年的主流安卓机型都可以。个别系统特别老的设备可能被安装器直接拒绝，这类情况只能换新一些的系统再试。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 底部行动条 -->
+    <section class="section">
+      <div class="wrap">
+        <div class="cta-band fade">
+          <h2>准备让手指歇一歇了？</h2>
+          <p>安装文件资源放在网盘里，转存后即可取出安装包。</p>
+          <a class="btn btn-primary btn-big" href="#" data-link="download">获取安装文件资源</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot-grid">
+      <p class="foot-note">本页为第三方整理的软件介绍与使用说明，展示素材来自公开资料，版权归原作者所有；安装文件资源的获取方式以页面内指引为准。</p>
+      <p class="foot-links"><a href="/download.html">安装指引</a></p>
+    </div>
+  </footer>
+
+  <div class="float-btns">
+    <button class="fbtn fbtn-top" aria-label="返回顶部">↑</button>
+    <a class="fbtn fbtn-dl" href="#" data-link="download" aria-label="获取安装文件资源">↓</a>
+  </div>
+
+  <script src="/assets/js/links.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
